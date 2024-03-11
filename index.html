@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabuada</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2016/12/10-fatos-que-vocc3aa-precisa-saber-sobre-a-5.png?w=1024);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #container {
+    margin-top: 50px;
+  }
+  input[type="number"] {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 90%;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #69abbb;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+
+
+  table{
+    text-align: center;
+    margin: auto;
+    background-color: #d6a80ffb;
+    border-radius: 6px;
+    width: 200px;
+    height: 200px;
+  }
+</style>
+</head>
+<body>
+
+    <h1 style="background-color: #f8f8f8; transform: translate(-50%); border-radius: 900px; margin-left: 50%; ">Tire Suas Dúvidas.</h1>
+
+<div id="container">
+  <h2 style="background-color: #f0f8ff; transform: translate(-50%); border-radius: 900px; margin-left: 50%;">Gerador de Tabuada</h2>
+  <input type="number" id="numInput" placeholder="Digite um número">
+  <button style="border-radius: 40px;" onclick="geradorTabuada()">Gerar Tabuada</button>
+  <div id="tabuada"></div>
+</div>
+
+<img style="width: 500px; right: 500px; margin-top: 90px; border-radius: 30px;" src="https://cdn.pensador.com/img/frase/br/un/bruno_de_lima_confia_todo_problema_tem_sempre_uma_soluc_lmv9gjy.jpg" alt="Frase multivacional">
+
+<script>
+  function geradorTabuada() {
+    var numInput = document.getElementById("numInput").value;
+    var tabuadaDiv = document.getElementById("tabuada");
+    tabuadaDiv.innerHTML = "";
+
+
+    if (!numInput || isNaN(numInput)) {
+      tabuadaDiv.innerHTML = "<p>Por favor, insira um número válido.</p>";
+      return;
+    }
+
+
+    var tableHTML = "<h3>Tabuada do " + numInput + "</h3><table border='1'><tr><th>Número</th><th>Resultado</th></tr>";
+
+
+    for (var i = 1; i <= 10; i++) {
+      tableHTML += "<tr><td>" + numInput + " x " + i + "</td><td>" + (numInput * i) + "</td></tr>";
+    }
+
+
+    tableHTML += "</table>";
+    tabuadaDiv.innerHTML = tableHTML;
+  }
+</script>
+
+<footer style="background-color: black;color: white; font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif; border-radius: 40px;">  <a href="https://github.com/dashboard" style=" color: aliceblue;"><img style="width: 40px;" src="https://bitperfect.at/assets/blog-images/Headerbild-Was-ist-GitHub-v2.png" alt="Github"> Luiz Felipe Sabaranski Marques</a> <a href="https://www.instagram.com/" style="color: #f0f8ff;"> <img style="width: 25px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/150px-Instagram_logo_2022.svg.png" alt="instagram"> @Luizfmarquess</a></footer>
+
+</body>
+</html>
